@@ -34,14 +34,15 @@ app.use(errorController.get404);
 
 mongoose
   .connect(
-    'mongodb+srv://devnishant29:mybirthdateis30@n.nxixkin.mongodb.net/N?retryWrites=true&w=majority'
+    'mongodb+srv://devnishant29:mybirthdateis30@n.nxixkin.mongodb.net/?retryWrites=true&w=majority'
   )
   .then(result => {
+    console.log('connected');
     User.findOne().then(user => {
       if (!user) {
         const user = new User({
-          name: 'Max',
-          email: 'max@test.com',
+          name: 'Nishant',
+          email: 'Nishant@test.com',
           cart: {
             items: []
           }
